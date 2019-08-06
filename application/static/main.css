@@ -1,0 +1,67 @@
+.my-background-nav
+{
+    background-color:#369e19;
+}
+.form-control:focus {
+  border-color: #23a32c !important;
+  box-shadow: 0 0 5px rgba(35, 163, 44, 1) !important;
+}
+.my-blog-content
+{
+    height: 400px;
+}
+.btn-primary {
+    color: #ffffff;
+    background-color: #23a32c;
+    border-color: #23a32c;
+}
+
+.btn-primary:hover {
+    color: #ffffff;
+    background-color: #239327;
+    border-color: #239327;
+}
+.article-title
+{
+    color:#444444;
+    font-family: Impact,charcoal,sans-serif;
+}
+a.article-title:hover
+{
+    color: #369e19;
+    text-decoration: none;
+}
+.article-content
+{
+    white-space: pre-line;
+    font-family: "Courier New",Courier,monospace;
+    font-size:16px;
+}
+.article-metadata
+{
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3;
+}
+.article-metadata a:hover
+{
+    color:#333;
+    text-decoration: none;
+}
+.my-article
+{
+    border: 1px solid green;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color: #d0ffce;
+}
+.btn-outline-info
+{
+    
+}
+.btn
+{
+    background-color: #369e19 !important;
+    color: #b6f0a6 !important;
+}

@@ -1,0 +1,92 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <h1 class="mt-2">Iris Flowers Classifier</h1>
+        <div class="content-section">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">
+                        {{ legend }}
+                    </legend>
+                    <div class="form-group">
+                        {{ form.sepalLength.label(class="form-control-label") }}
+                        {% if form.sepalLength.errors %}
+                            {{ form.sepalLength(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.sepalLength.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.sepalLength(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.sepalWidth.label(class="form-control-label") }}
+                        {% if form.sepalWidth.errors %}
+                            {{ form.sepalWidth(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.sepalWidth.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.sepalWidth(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.petalLength.label(class="form-control-label") }}
+                        {% if form.petalLength.errors %}
+                            {{ form.petalLength(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.password.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.petalLength(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                            {{ form.petalWidth.label(class="form-control-label") }}
+                            {% if form.petalWidth.errors %}
+                                {{ form.petalWidth(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.password.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.petalWidth(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                </fieldset>
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-outline-info")}}
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-4">
+            <h1 class="mt-2">Your Output</h1>
+            {% if file=='default' %}
+            <img src="{{ url_for('static',filename='default.jpg') }}">
+            {% endif %}
+            {% if file=='iris_setosa' %}
+            <img src="{{ url_for('static',filename='iris_setosa.jpg') }}">
+            {% endif %}
+            {% if file=='iris_versicolor' %}
+            <img src="{{ url_for('static',filename='iris_versicolor.jpg') }}">
+            {% endif %}
+            {% if file=='iris_virginica' %}
+            <img src="{{ url_for('static',filename='iris_virginica.jpg') }}">
+            {% endif %}
+            <h1 class="mt-2">{{ result }}</h1>
+            <small><b>Our API is also available at:</b></small><br>
+            <small>http://localhost:5000/iris_classification/api/v1.0/attributes/&lt;sepalLength&gt;/</small><br>
+            <small>&lt;sepalWidth&gt;/&lt;petalLength&gt;/&lt;petalWidth&gt;/</small>
+    </div>
+</div>
+{% endblock content %}

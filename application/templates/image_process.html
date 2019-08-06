@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <h1 class="mt-2">Image Processor</h1>
+        <h3 class="mt-2">Load Image</h3>
+        <div class="content-section">
+                <form method="POST" action="">
+                        {{ form.hidden_tag() }}
+                        <fieldset class="form-group">
+                            <legend class="border-bottom mb-4">
+                                {{ legend }}
+                            </legend>
+                            <div class="form-group">
+                                {{ form.myImage.label() }}
+                                {{ form.myImage(class="form-control-file") }}
+                                {% if form.myImage.errors %}
+                                        {% for error in form.myImage.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                {% endif %}
+                            </div>
+                        </fieldset>
+                        <div class="form-group">
+                            {{ form.submit(class="btn btn-outline-info")}}
+                        </div>
+                    </form>
+                </div>
+            </div>
+    <div class="col-md-4">
+        <h1 class="mt-2">Your Output</h1>
+        {% if file=='default' %}
+        <img src="{{ url_for('static',filename='default.jpg') }}">
+        {% endif %}
+        {% if file=='myImage' %}
+        <img src="{{ url_for('static',filename='myImage.jpg') }}">
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

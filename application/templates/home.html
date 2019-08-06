@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block content %}
+    <div class="row">
+	<div class="col-md-8">
+	   <h1 class="mt-2">My Projects</h1><br>
+				<h1 class="mt-2"><a href="{{ url_for('iris_classification') }}">Iris Flowers Classifier</a></h1>
+				<h1 class="mt-2"><a href="{{ url_for('loan_predictor') }}">Loan Predictor</a></h1>
+	</div>
+	<div class="col-md-4">
+	</div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,189 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <h1 class="mt-2">Loan Predictor</h1>
+        <div class="content-section">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">
+                        {{ legend }}
+                    </legend>
+                    <div class="form-group">
+                        {{ form.loanID.label(class="form-control-label") }}
+                        {% if form.loanID.errors %}
+                            {{ form.loanID(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.loanID.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.loanID(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.gender.label(class="form-control-label") }}
+                        {% if form.gender.errors %}
+                            {{ form.gender(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.gender.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.gender(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.married.label(class="form-control-label") }}
+                        {% if form.married.errors %}
+                            {{ form.married(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.married.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.married(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                            {{ form.dependents.label(class="form-control-label") }}
+                            {% if form.dependents.errors %}
+                                {{ form.dependents(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.dependents.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.dependents(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.education.label(class="form-control-label") }}
+                            {% if form.education.errors %}
+                                {{ form.education(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.education.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.education(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.selfEmployed.label(class="form-control-label") }}
+                            {% if form.selfEmployed.errors %}
+                                {{ form.selfEmployed(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.selfEmployed.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.selfEmployed(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.applicantIncome.label(class="form-control-label") }}
+                            {% if form.applicantIncome.errors %}
+                                {{ form.applicantIncome(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.applicantIncome.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.applicantIncome(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                                {{ form.coApplicantIncome.label(class="form-control-label") }}
+                                {% if form.coApplicantIncome.errors %}
+                                    {{ form.coApplicantIncome(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.coApplicantIncome.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.coApplicantIncome(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.loanAmount.label(class="form-control-label") }}
+                                {% if form.loanAmount.errors %}
+                                    {{ form.loanAmount(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.loanAmount.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.loanAmount(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.loanAmountTerm.label(class="form-control-label") }}
+                                {% if form.loanAmountTerm.errors %}
+                                    {{ form.loanAmountTerm(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.loanAmountTerm.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.loanAmountTerm(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.creditHistory.label(class="form-control-label") }}
+                                {% if form.creditHistory.errors %}
+                                    {{ form.creditHistory(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.creditHistory.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.creditHistory(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                    {{ form.propertyArea.label(class="form-control-label") }}
+                                    {% if form.propertyArea.errors %}
+                                        {{ form.propertyArea(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.propertyArea.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.propertyArea(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                </fieldset>
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-outline-info")}}
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-4">
+            <h1 class="mt-2">Your Output</h1>
+            {% if file=='default' %}
+            <img src="{{ url_for('static',filename='default.jpg') }}">
+            {% endif %}
+            {% if file=='Approved' %}
+            <img src="{{ url_for('static',filename='approved.jpg') }}">
+            {% endif %}
+            {% if file=='Rejected' %}
+            <img src="{{ url_for('static',filename='rejected.jpg') }}">
+            {% endif %}
+    </div>
+</div>
+{% endblock content %}
